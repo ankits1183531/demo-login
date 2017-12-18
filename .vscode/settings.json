@@ -1,0 +1,10 @@
+{
+  "editor.fontSize": 15,
+  "editor.lineHeight": 20,
+  "editor.wordWrapColumn": 125,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.autoIndent": true,
+  "editor.rulers": [
+    180
+  ]
+}

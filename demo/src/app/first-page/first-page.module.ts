@@ -3,6 +3,7 @@ import { Routes , RouterModule } from '@angular/router';
 
 import { FirstPageComponent } from './first-page.component';
 import { expand } from "rxjs/operators/expand";
+import { ChartDataAPIService } from "./chartAPI.service";
 
 @NgModule({
   imports : [
@@ -14,7 +15,7 @@ import { expand } from "rxjs/operators/expand";
   ],
   exports : [],
   declarations : [FirstPageComponent],
-  providers: []
+  providers: [ChartDataAPIService]
 })
 
 export class FirstPageModuleComponent {

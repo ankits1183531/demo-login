@@ -17,7 +17,7 @@ export class NoopInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this.inj.get(AuthProviderService).isLoggedIn()) {
       const auth = req.clone({
-        headers: req.headers.set('Authorization', localStorage.getItem('AccessToken'))
+        headers: req.headers.set('Authorization', `Bearer 4340032c-6482-458a-a9b2-85493c2bb20b`)
       })
       req = auth;
     } else {

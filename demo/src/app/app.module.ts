@@ -11,17 +11,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MainPageComponent} from './main-page/main-page.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import { NavBar } from './nav-bar/nav-bar.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+// import {DashboardComponent} from './dashboard/dashboard.component';
+// import { NavBar } from './nav-bar/nav-bar.component';
+// import { FooterComponent } from './footer/footer.component';
+// import { HeaderComponent } from './header/header.component';
 import { NotifierModule } from 'angular-notifier';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthProviderService } from './services/Auth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NoopInterceptor } from './services/API-Interceptor.service';
-import { FirstPageComponent } from './first-page/first-page.component';
-import { SecondPageComponent } from './second-page/second-page.component';
+// import { FirstPageComponent } from './first-page/first-page.component';
+// import { SecondPageComponent } from './second-page/second-page.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,12 @@ import { SecondPageComponent } from './second-page/second-page.component';
     LoginFormComponent,
     SignUpComponent,
     MainPageComponent,
-    DashboardComponent,
-    FooterComponent,
-    NavBar,
-    HeaderComponent,
-    FirstPageComponent,
-    SecondPageComponent
+    // DashboardComponent,
+    // FooterComponent,
+    // NavBar,
+    // HeaderComponent,
+    // FirstPageComponent,
+    // SecondPageComponent
   ],
   imports: [
     BrowserModule,

@@ -12,15 +12,10 @@ export class AuthDeactivate {
     ) { }
 
     canDeactivate(): boolean {
-        if (this.router.url.includes('dashboard')) {
+        if (this.router.url.includes('my')) {
             var rememberMe = localStorage.getItem('rememberMe');
-            // if(rememberMe){
-                this.router.navigateByUrl('/dashboard');
-                return false;
-            // }
-            // else{
-            //     return true;
-            // }    
+                this.router.navigateByUrl('/my');
+                return false;  
         }
         else {
             return true;

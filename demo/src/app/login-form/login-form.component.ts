@@ -49,10 +49,9 @@ export class LoginFormComponent implements OnInit {
         let val :LoginDetail = this.loginForm.value;
         const newVal = Object.assign({}, val);
         delete val['rememberMe'];
-        // this.Button.btnAngChk.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Please wait';
         document.getElementById('btnLogin').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Please wait';
         this.authService.loginAuthentication(val).subscribe((res : any) => {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/my']);
             localStorage.setItem("rememberMe", newVal["rememberMe"])
             localStorage.setItem('AccessToken' , res.data.access_token)
         }, (err) => {

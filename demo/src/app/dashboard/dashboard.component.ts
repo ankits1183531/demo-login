@@ -6,7 +6,6 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavBar } from '../nav-bar/nav-bar.component';
 import { debug } from 'util';
 
-
 @Component({
     selector : 'dashboard',
     templateUrl : './dashboard.component.html',

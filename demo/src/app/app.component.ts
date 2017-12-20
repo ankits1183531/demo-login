@@ -15,11 +15,18 @@ export class AppComponent {
   ) {
     var rememberMe = localStorage.getItem('rememberMe');
     var accessToken = localStorage.getItem('AccessToken');
-    if (rememberMe != null && rememberMe != '' && accessToken != null) {
-        this.router.navigateByUrl('/dashboard');
+    if (accessToken != null) {
+      this.router.navigateByUrl('/my');
     } else {
-      localStorage.clear();
     }
-  }
 
-}
+    window.addEventListener('unload', ($event) => {
+      if(rememberMe == "" && rememberMe == null ){
+        localStorage.clear();
+      }
+    })
+
+
+
+  }
+} 

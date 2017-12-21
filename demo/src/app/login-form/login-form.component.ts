@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 // static import
@@ -12,6 +12,8 @@ import { Observable } from 'rxjs/Observable';
 import { ViewChild, ElementRef} from '@angular/core';
 import { Input } from '@angular/core/src/metadata/directives';
 import { Button } from 'selenium-webdriver';
+
+import { CustomNotifierService} from '../services/notifier.service';
 
 @Component({
     selector: 'login-form',
@@ -30,7 +32,8 @@ export class LoginFormComponent implements OnInit {
         private fb: FormBuilder,
         private router : Router,
         private route : ActivatedRoute,
-        private authService : AuthProviderService
+        private authService : AuthProviderService,
+        private notifierService: CustomNotifierService
     ) {}
 
     ngOnInit() {
@@ -51,10 +54,12 @@ export class LoginFormComponent implements OnInit {
         delete val['rememberMe'];
         document.getElementById('btnLogin').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Please wait';
         this.authService.loginAuthentication(val).subscribe((res : any) => {
+            this.notifierService.notifier("success", 'Successfully Connected');
             this.router.navigate(['/my']);
             localStorage.setItem("rememberMe", newVal["rememberMe"])
             localStorage.setItem('AccessToken' , res.data.access_token)
         }, (err) => {
+            this.notifierService.notifier("error", 'Authentication Failed');
             document.getElementById('btnLogin').innerHTML = 'Submit';
         });     
     }
